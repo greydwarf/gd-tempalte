@@ -1,0 +1,5 @@
+package_add_test(test_sample_lib time_ut.cpp)
+target_link_libraries(test_sample_lib PUBLIC sample_lib)
+target_link_libraries(test_sample_lib PUBLIC fmt)
+target_link_libraries(test_sample_lib PRIVATE project_warnings project_options)
+
