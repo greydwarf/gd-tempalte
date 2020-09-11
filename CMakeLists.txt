@@ -16,7 +16,8 @@ include(cmake/CompilerWarnings.cmake)
 set_project_warnings(project_warnings)
 
 add_subdirectory(external/fmt)
-add_subdirectory(external/abseil)
+add_library(parahash INTERFACE)
+target_include_directories(parahash INTERFACE external/parallel-hashmap)
 
 if(CMAKE_CXX_COMPILER_ID MATCHES ".*Clang")
   option(ENABLE_BUILD_WITH_TIME_TRACE "Enable -ftime-trace to generate time tracing .json files on clang" OFF)
